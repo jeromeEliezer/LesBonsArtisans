@@ -1,0 +1,66 @@
+@port=4000
+@url=http://localhost:{{port}}
+@id=634ffc023f81e930319a4d4a
+@appointementId=0ff1c367-e6e4-4e3a-8a52-299c264935f6
+@Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk2NTA3MWZlLTg0ZDgtNGM1Yy1iODNkLTg5NGQ4NDk1YjM4YSIsImV4cGlyZXNJbiI6IjFkIiwiaWF0IjoxNjYzMzYzMjg2fQ.QT9DsckRMrm6hBgDBf6AGrVr0YRhEKh7lGlzUbNQu1Y
+#####bussiness Articles################################### 
+GET {{url}}/articles/{{id}}
+#######
+DELETE {{url}}/articles/{{id}}
+########
+GET {{url}}/articles
+#######
+POST {{url}}/articles
+Content-Type: application/json
+
+{
+"name": "AC1 Phone1",
+"type": "phone",
+"price": 200.05,
+"rating": 3.8,
+"warranty_years": 1,
+"available": true
+}
+######
+PUT {{url}}/articles/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Vroom",
+  "type": "phone",
+  "price": 50.20,
+  "rating": 4,
+  "warranty_years": 2,
+  "available": true
+}
+###### Need ###############################
+
+# {
+#   "_id": 1,
+#   "name": "AC1 Phone1",
+#   "type": "phone",
+#   "price": 200.05,
+#   "rating": 3.8,
+#   "warranty_years": 1,
+#   "available": true
+# },
+
+# {
+#   "_id": 2,
+#   "name": "AC2 Phone2",
+#   "type": "phone",
+#   "price": 147.21,
+#   "rating": 1,
+#   "warranty_years": 3,
+#   "available": false
+# },
+
+# {
+#   "_id": 3,
+#   "name": "AC3 Phone3",
+#   "type": "phone",
+#   "price": 150,
+#   "rating": 2,
+#   "warranty_years": 1,
+#   "available": true
+# },

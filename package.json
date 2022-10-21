@@ -1,0 +1,14 @@
+{
+  "name": "lesbonsartisans",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.js",
+  "scripts": {
+    "dev": "concurrently  \"cd client && npm run start\" \"cd backend && npm run dev\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
