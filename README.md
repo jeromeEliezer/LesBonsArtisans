@@ -49,20 +49,28 @@ Bonne chance 🍀 ➡️ Les produits de la base de données : [ { "_id" : 1, "n
 ## How To Use
 After clone...
 #### ⚙️ Installation
-npm i
-cd backend 
-npm i 
-cd ..
-cd client
-npm i 
-cd ..
+
+
+<ul>
+    <li>npm i</li>
+    <li>cd backend</li>
+    <li>npm i </li>
+    <li>cd ..</li>
+    <li>cd frontend</li>
+    <li>npm i</li>
+    <li>cd ..</li>
+</ul>
+
 #### Start project 
 npm run dev
 
 
+# About
+<em>Never Give Up,</em>
+
 ## Contributor
 
--<spam>Jérôme</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][jérôme]
+-<spam>Jérôme</spam> [<img alt="github link" width="30px" src="./public/logo512.png"/>][jérôme]
 <br />
 <br />
 

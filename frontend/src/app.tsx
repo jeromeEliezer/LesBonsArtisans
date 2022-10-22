@@ -11,7 +11,6 @@ function App() {
   const initApp = useCallback(async () => {
     await dispatch(getArticles());
   }, [dispatch]);
-
   useEffect(() => {
     initApp();
   }, [initApp])
@@ -19,7 +18,7 @@ function App() {
   return (
     <BrowserRouter>,
       <Routes>
-        <Route path="/" element={<ArticlesList/>}></Route>
+        <Route path="/" element={<ArticlesList />}></Route>
       </Routes>
     </BrowserRouter>
   );

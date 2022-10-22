@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import './index.css';
 import App from './app';
+import { NavBar } from './components/navBar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +14,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <NavBar />
+      <App />
     </Provider>
   </React.StrictMode>
 );

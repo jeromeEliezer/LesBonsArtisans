@@ -4,11 +4,13 @@
   "description": "",
   "main": "data.js",
   "scripts": {
-    "dev": "concurrently  \"cd frontend && npm run start\" \"cd backend && npm run dev\""
+    "dev": "concurrently  \"cd frontend && npm run start\" \"cd backend && npm run dev\"",
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^7.4.0"
+  },
+  "devDependencies": {
   }
 }
