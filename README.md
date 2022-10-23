@@ -12,7 +12,10 @@
 ---
 
 ## 📖 Description
-
+<h3>Screenshot</h3>
+<div>
+    [<img alt="Screenshot of project" width="351px" src="/frontend/public/Capture d’écran 2022-10-23 à 04.20.00.png"/>]
+</div>
 **this is a technical test**
 
 <div>
