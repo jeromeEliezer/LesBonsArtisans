@@ -1,18 +1,23 @@
-import { useAppSelector } from '../../store/store'
-import { Container, Grid } from '@mui/material/'
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import { useNavigate } from "react-router-dom";
+
+import { tableCellClasses } from '@mui/material/TableCell';
+import {
+  Button, Container, Grid,
+  TableBody, Table, TableRow,
+  TableCell, TableContainer,
+  Paper, styled, TableHead,
+} from '@mui/material/';
+import AddIcon from '@mui/icons-material/Add';
+
+import { useAppDispatch, useAppSelector } from '../../store/store'
+import { deleteArticle, setSingleArticle } from './articleSlice';
+import { Article } from '../../interfaces/article';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
+
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -30,12 +35,37 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export const ArticlesList = () => {
-  const { articles } = useAppSelector(state => state.article)
+  const { articles } = useAppSelector(state => state.article);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleAdd = () => {
+    dispatch(setSingleArticle);
+    navigate("/article");
+  };
+
+  const handleUpdate = (data: Article) => {
+    dispatch(setSingleArticle(data));
+    navigate("/article");
+  };
+
+  const handleDelete = (article: Article) => {
+    if (window.confirm('Are you sure you want to remove this article ?')) {
+      dispatch(deleteArticle(article));
+    }
+  };
+
   return (
     <Container>
+      <h3 style={{ textAlign: "center" }}>List of articles</h3>
+      <Button
+        onClick={() => {handleAdd()}}
+        startIcon={<AddIcon />}>
+        Add article
+      </Button>
       <Grid>
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+          <Table sx={{ minWidth: 150 }} aria-label="customized table">
             <TableHead>
               <TableRow>
                 <StyledTableCell align="center">name</StyledTableCell>
@@ -58,7 +88,10 @@ export const ArticlesList = () => {
                   <StyledTableCell align="center">{article.rating}</StyledTableCell>
                   <StyledTableCell align="center">{article.warranty_years}</StyledTableCell>
                   <StyledTableCell align="center">{article.available ? "Yes" : "No"}</StyledTableCell>
-                  <StyledTableCell align="center"><button>Delete</button> <button>Update</button></StyledTableCell>
+                  <StyledTableCell align="center">
+                    <Button color="error" onClick={() => handleDelete(article)}>Delete</Button>
+                    <Button onClick={() => handleUpdate(article)}>Update</Button>
+                  </StyledTableCell>
                 </StyledTableRow>
               ))}
             </TableBody>

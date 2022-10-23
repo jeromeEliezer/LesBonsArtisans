@@ -6,7 +6,7 @@ interface ArticleState {
     articles: Article[] | null;
     loading: boolean; 
     singleArticle: Article | null;
-    errors:any;
+    errors: any;
 }
 
 const initialState: ArticleState = {
@@ -16,7 +16,7 @@ const initialState: ArticleState = {
     errors: null
 }
 
-const backendUrl = "http://localhost:4000"
+const backendUrl = "http://localhost:4000";
 
 // actions are processes that get data from backend
 export const getArticles = createAsyncThunk<Article[]>(
@@ -35,7 +35,33 @@ export const createArticle = createAsyncThunk<Object, Article>(
     "articles/createArticle",
     async (data, thunkAPI) => {
         try {
-            const response = await axios.post(`${backendUrl}/article`, data);
+            const response = await axios.post(`${backendUrl}/articles`, data);
+            thunkAPI.dispatch(getArticles());
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+)
+
+export const deleteArticle = createAsyncThunk<Object, Article>(
+    "articles/deleteArticle",
+    async (data, thunkAPI) => {
+        try {
+            const response = await axios.delete(`${backendUrl}/articles/${data._id}`);
+            thunkAPI.dispatch(getArticles());
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+)
+ 
+export const editArticle = createAsyncThunk<Object, Article>(
+    "articles/editArticle",
+    async (data, thunkAPI) => {
+        try {
+            const response = await axios.put(`${backendUrl}/article/${data._id}`, {data});
             thunkAPI.dispatch(getArticles());
             return response.data;
         } catch (error) {
@@ -49,8 +75,11 @@ export const articleSlice = createSlice({
     name: "articles",
     initialState,
     reducers: {
-        setArticle: (state, action: PayloadAction<Article[]>) => {
+        setArticles: (state, action: PayloadAction<Article[]>) => {
             state.articles = action.payload
+        },
+        setSingleArticle: (state, action: PayloadAction<Article>) => {
+            state.singleArticle = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -69,4 +98,4 @@ export const articleSlice = createSlice({
 })
 
 export default articleSlice.reducer;
-export const { setArticle } = articleSlice.actions;
+export const { setArticles, setSingleArticle } = articleSlice.actions;

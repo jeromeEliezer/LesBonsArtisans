@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ArticleForm } from './features/articles/articleForm';
 import { getArticles } from './features/articles/articleSlice';
 
 import { ArticlesList } from './features/articles/articlesList';
@@ -18,7 +19,8 @@ function App() {
   return (
     <BrowserRouter>,
       <Routes>
-        <Route path="/" element={<ArticlesList />}></Route>
+        <Route path="/" element={<ArticlesList />}/>
+        <Route path="/article" element={<ArticleForm />}/>
       </Routes>
     </BrowserRouter>
   );

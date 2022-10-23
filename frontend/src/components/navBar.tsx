@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import lesBonsArtisansLogo from '../lesBonsArtisansLogo.svg';
 
-const pages = ['Articles', 'Profile'];
+const pages = ['Articles', 'Profile', 'New'];
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -35,12 +35,14 @@ export const NavBar = () => {
 
   const styledImage = {
     display: "flex",
+    flex:1,
     maxHeight: "40px",
     padding: "1rem ",
   
   };
 
   return (
+    <Box  sx={{ flexGrow: 1, minWidth: 150 }}>
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -96,6 +98,7 @@ export const NavBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    </Box>
   )
 }
 
