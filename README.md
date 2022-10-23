@@ -14,7 +14,12 @@
 ## 📖 Description
 <h3>Screenshot</h3>
 <div>
-    [<img alt="Screenshot of project" width="351px" src="/frontend/public/Capture d’écran 2022-10-23 à 04.20.00.png"/>]
+    [
+        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot1"/>
+        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot2"/>
+        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot3"/>
+        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot4"/>
+    ]
 </div>
 **this is a technical test**
 
