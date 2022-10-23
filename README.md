@@ -15,10 +15,10 @@
 <h3>Screenshot</h3>
 <div>
     [
-        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot1"/>
-        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot2"/>
-        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot3"/>
-        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot4"/>
+        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot1.png"/>
+        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot2.png"/>
+        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot3.png"/>
+        <img alt="Screenshot of project" width="351px" src="/frontend/public/Screenshot4.png"/>
     ]
 </div>
 **this is a technical test**
