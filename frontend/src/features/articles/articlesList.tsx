@@ -35,12 +35,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export const ArticlesList = () => {
-  const { articles } = useAppSelector(state => state.article);
+  const { singleArticle, articles } = useAppSelector(state => state.article);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleAdd = () => {
-    dispatch(setSingleArticle);
+    console.log(singleArticle);
+    dispatch(setSingleArticle(null));
     navigate("/article");
   };
 
@@ -78,7 +79,7 @@ export const ArticlesList = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {articles && articles.map((article) => (
+              {articles && articles.map((article: Article) => (
                 <StyledTableRow key={article._id}>
                   <StyledTableCell component="th" scope="row">
                     {article.name}

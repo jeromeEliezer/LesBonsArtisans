@@ -35,7 +35,7 @@ export const createArticle = createAsyncThunk<Object, Article>(
     "articles/createArticle",
     async (data, thunkAPI) => {
         try {
-            const response = await axios.post(`${backendUrl}/articles`, data);
+            const response = await axios.post(`${backendUrl}/articles`, {data});
             thunkAPI.dispatch(getArticles());
             return response.data;
         } catch (error) {
@@ -78,9 +78,9 @@ export const articleSlice = createSlice({
         setArticles: (state, action: PayloadAction<Article[]>) => {
             state.articles = action.payload
         },
-        setSingleArticle: (state, action: PayloadAction<Article>) => {
+        setSingleArticle: (state, action: PayloadAction<Article | null>) => {
             state.singleArticle = action.payload
-        }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(getArticles.pending, (state) => {
