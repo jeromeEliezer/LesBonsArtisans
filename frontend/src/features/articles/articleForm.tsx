@@ -100,7 +100,9 @@ export const ArticleForm = () => {
           <TextField
             id="outlined-helperText"
             label="Name"
-            defaultValue={singleArticle?.name}
+
+            // defaultValue={singleArticle?.name}
+
             error={errors.name ? true : false}
             {...register('name', validation.name)}
             helperText={errors.name ? `${errors.name.message}` : "Name of article"}
@@ -108,7 +110,9 @@ export const ArticleForm = () => {
           <TextField
             id="outlined-helperText"
             label="Type"
-            defaultValue={singleArticle?.type}
+
+            // defaultValue={singleArticle?.type}
+
             error={errors.type ? true : false}
             helperText={errors.type ? `${errors.type.message}` : "Type of article"}
             {...register('type', validation.type)}
@@ -116,7 +120,8 @@ export const ArticleForm = () => {
           <TextField
             id="outlined-helperText"
             label="Price"
-            defaultValue={singleArticle?.price}
+            // defaultValue={singleArticle?.price}
+
             error={errors.price ? true : false}
             helperText={errors.price ? `${errors.price.message}` : "Price of article"}
             {...register('price', validation.price)}
@@ -124,7 +129,8 @@ export const ArticleForm = () => {
           <TextField
             id="outlined-helperText"
             label="Rating"
-            defaultValue={singleArticle?.rating}
+            
+            // defaultValue={singleArticle?.rating}
             error={errors.rating ? true : false}
             helperText={errors.rating ? `${errors.rating.message}` : "Rating of article"}
             {...register('rating', validation.rating)}
@@ -133,7 +139,7 @@ export const ArticleForm = () => {
             type="number"
             id="outlined-helperText"
             label="Warranty_years"
-            defaultValue={singleArticle?.warranty_years}
+            // defaultValue={"singleArticle?.warranty_years"}
             error={errors.warranty_years ? true : false}
             helperText={errors.warranty_years ? `${errors.warranty_years.message}` : "Number of years"}
             {...register('warranty_years', validation.warranty_years)}
@@ -142,7 +148,7 @@ export const ArticleForm = () => {
             id="outlined-select-currency"
             select
             required
-            label={singleArticle?.available ? "Yes" : "Select availability"}
+            // label={singleArticle?.available ? "Yes" : "Select availability"}
             error={errors.available ? true : false}
             helperText={errors.available ? `${errors.available.message}` : "Availability of article"}
             {...register('available', validation.available)}
