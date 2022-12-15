@@ -1,4 +1,4 @@
-@port=4000
+@port=
 @url=http://localhost:{{port}}
 @id=635264b05eb62e0b8ffa0c87
 @appointementId=0ff1c367-e6e4-4e3a-8a52-299c264935f6
